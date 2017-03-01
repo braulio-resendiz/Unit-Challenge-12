@@ -1,12 +1,3 @@
-/**
-* Removes part of string between two sub strings
-* @param {string} text The original string
-* @param {string} start The starting string
-* @param {string} end The ending string
-* @return {string} The string in between
-*/
-function between(string, start, end) {
-    var startAt = string.indexOf(start);
 
     if (startAt == -1) {
         return undefined;
@@ -64,3 +55,4 @@ function displayAreaCode(inputId, outputId) {
 
     document.getElementById(outputId).innerHTML = outputText;
 }
+
