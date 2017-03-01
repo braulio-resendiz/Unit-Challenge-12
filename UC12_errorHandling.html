@@ -2,16 +2,21 @@
 <html>
 
 <head>
-          <script language="javascript" type="text/javascript" src="7.js"></script>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="UC12_functions.js"></script>
 </head>
 
 <body>
           <div id="phone">
                     <center>
-                              <p><span class="rainbow">Enter a number and click the button to see if it is a valid phone number.</span></p>
+                              <p>Please enter your Phone Number:</p>
                               <input type="text" id="input">
                               <p/>
-                              <input type="button" onclick="displayCheckVALID_PHONE('input', 'output')" value="Calculate.">
+                              <input type="button" onclick="displayOutput('input', 'output')" value="Validate.">
                               <p/>
                               <div id="output"></div>
                     </center>

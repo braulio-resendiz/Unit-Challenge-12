@@ -8,6 +8,7 @@
  */
 function between(string, start, end) {
           var startAt = string.indexOf(start);
+          console.log(startAt)
           if (startAt == -1) {
                     throw new Error("No start found: " + start);
           }
@@ -32,54 +33,56 @@ function getAreaCode(phoneNum) {
                     console.log(error.message);
                     return undefined;
           }
+          return areaCode
 }
 
-function displayCheckVALID_PHONE(inputId, outputId) {
-          var input = document.getElementById(inputId).value;
+function displayOutput(a, b) {
+          displayAreaCode(a, b);
+          displayCOCode(a, b);
+          displayLineCode(a, b);
+}
+
+function displayAreaCode(inputId, outputId) {
+          var input = "'" + document.getElementById(inputId).value + "'";
+          console.log(input)
           var outputText = "";
-          if (VALID_PHONE(input) == true) {
-                    outputText = "The number " + input + " is a valid Phone number.";
+          if (getAreaCode(input) != undefined) {
+                    outputText = "The Area Code is " + getAreaCode(input) + ".";
                     document.getElementById(outputId).style.color = "blue";
           }
-          else {
-                    outputText = "The number " + input + " is not a valid phone number.";
+          else if (getAreaCode(input) == undefined) {
+                    outputText = "Error";
                     document.getElementById(outputId).style.color = "blue";
           }
           document.getElementById(outputId).innerHTML = outputText;
 }
 
-function phonenumchk(num) {
-          var sum = 0;
-          for (var i = 0; i < num.length; i++) {
-                    if (i != 3) {
-                              sum += parseInt(num[i]);
-                    }
-                    else {
-                              i++
-                    }
+function displayCOCode(inputId, outputId) {
+          var input = "'" + document.getElementById(inputId).value + "'";
+          console.log(input)
+          var outputText = "";
+          if (getAreaCode(input) != undefined) {
+                    outputText = "The Area Code is " + getAreaCode(input) + ".";
+                    document.getElementById(outputId).style.color = "blue";
           }
-          return sum;
-}
-
-function hyphenchk(num) {
-          return num[3]
-}
-
-function fivfivfivchk(num) {
-          if (num[0] == "5" && num[1] == "5" && num[2] == "5") {
-                    return false
+          else if (getAreaCode(input) == undefined) {
+                    outputText = "Error";
+                    document.getElementById(outputId).style.color = "blue";
           }
-          return true
+          document.getElementById(outputId).innerHTML = outputText;
 }
 
-function VALID_PHONE(num) {
-          if (phonenumchk(num) > 0 && fivfivfivchk(num) && num.length == 8 && hyphenchk(num) == "-") {
-                    return true;
+function displayLineCode(inputId, outputId) {
+          var input = "'" + document.getElementById(inputId).value + "'";
+          console.log(input)
+          var outputText = "";
+          if (getAreaCode(input) != undefined) {
+                    outputText = "The Area Code is " + getAreaCode(input) + ".";
+                    document.getElementById(outputId).style.color = "blue";
           }
-          return false;
-}
-
-function changeElementClass(id, className) {
-          var el = document.getElementById(id);
-          el.className = className;
+          else if (getAreaCode(input) == undefined) {
+                    outputText = "Error";
+                    document.getElementById(outputId).style.color = "blue";
+          }
+          document.getElementById(outputId).innerHTML = outputText;
 }
