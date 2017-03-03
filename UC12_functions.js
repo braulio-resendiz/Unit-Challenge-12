@@ -27,25 +27,13 @@ function between(string, start, end) {
  * @param   {string} phoneNum The phone number
  * @returns {string} The area code
  */
-function getAreaCode(phoneNum) {
-          var areaCode;
-          try {
-                    areaCode = between(phoneNum, "(", ")");
-          }
-          catch (error) {
-                    areaCode = undefined;
-          }
-          return areaCode
-}
-
 function getCOCode(phoneNum) {
           var COCode;
           try {
                     COCode = between(phoneNum, " ", "-");
           }
           catch (error) {
-                    console.log(error.message);
-                    return undefined;
+                    COCode = undefined;
           }
           return COCode
 }
@@ -56,8 +44,7 @@ function getLineCode(phoneNum) {
                     LineCode = between(phoneNum, "-");
           }
           catch (error) {
-                    console.log(error.message);
-                    return undefined;
+                    LineCode = undefined;
           }
           return LineCode
 }
@@ -71,7 +58,6 @@ function displayOutput(a, b) {
 function displayAreaCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML = "";
           var input = "'" + document.getElementById(inputId).value + "'";
-          console.log(input)
           var outputText = "";
           if (getAreaCode(input) != undefined) {
                     outputText = "The Area Code is " + getAreaCode(input) + ".";
@@ -86,7 +72,6 @@ function displayAreaCode(inputId, outputId) {
 
 function displayCOCode(inputId, outputId) {
           var input = "'" + document.getElementById(inputId).value + "'";
-          console.log(input)
           var outputText = "";
           if (getCOCode(input) != undefined) {
                     outputText = "The CO Code is " + getCOCode(input) + ".";
@@ -101,7 +86,6 @@ function displayCOCode(inputId, outputId) {
 
 function displayLineCode(inputId, outputId) {
           var input = "'" + document.getElementById(inputId).value + "'";
-          console.log(input)
           var outputText = "";
           if (getLineCode(input) != undefined) {
                     outputText = "The Line Code is " + getLineCode(input) + ".";
@@ -114,7 +98,41 @@ function displayLineCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
-/*function getAreaCode(phoneNum) {
+function getAreaCode(phoneNum) {
+          var areaCode;
+          try {
+                    areaCode = between(phoneNum, "(", ")");
+                    areaCode = areaCode.trim();
+                    if (areaCode.length == 3 && Number(areaCode)) {
+                              return areaCode;
+                    }
+                    else {
+                              throw new Error("Invalid area code: " + areaCode);
+                    }
+          }
+          catch (error) {
+                    throw new Error("Invalid phone number: " + error.message);
+          }
+}
+
+function getCOCode(phoneNum) {
+          var COCode;
+          try {
+                    COCode = between(phoneNum, " ", "-");
+                    areaCode = areaCode.trim();
+                    if (COCode.length == 3 && Number(COCode)) {
+                              return areaCode;
+                    }
+                    else {
+                              throw new Error("Invalid CO code: " + areaCode);
+                    }
+          }
+          catch (error) {
+                    throw new Error("Invalid phone number: " + error.message);
+          }
+}
+
+function getAreaCode(phoneNum) {
           var areaCode;
           try {
                     areaCode = between(phoneNum, "(", ")");
@@ -145,5 +163,3 @@ function displayAreaCode(inputId, outputId) {
           }
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
-*/
-
