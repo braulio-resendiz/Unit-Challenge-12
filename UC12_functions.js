@@ -114,7 +114,7 @@ function displayLineCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML = outputText;
 }
 
-function getAreaCode(phoneNum) {
+/*function getAreaCode(phoneNum) {
           var areaCode;
           try {
                     areaCode = between(phoneNum, "(", ")");
@@ -145,3 +145,5 @@ function displayAreaCode(inputId, outputId) {
           }
           document.getElementById(outputId).innerHTML = outputText;
 }
+*/
+
