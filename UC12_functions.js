@@ -15,7 +15,7 @@ function between(string, start, end) {
           startAt += start.length;
           var endAt = string.indexOf(end, startAt);
           if (end == undefined) {
-                    endAt = string.length;
+                    endAt = string.length - 1;
           }
           if (endAt == -1) {
                     throw new Error("No end found: " + end);
@@ -33,8 +33,7 @@ function getAreaCode(phoneNum) {
                     areaCode = between(phoneNum, "(", ")");
           }
           catch (error) {
-                    console.log(error.message);
-                    return undefined;
+                    areaCode = undefined;
           }
           return areaCode
 }
@@ -54,7 +53,7 @@ function getCOCode(phoneNum) {
 function getLineCode(phoneNum) {
           var LineCode;
           try {
-                    LineCode = between(phoneNum, "(", ")");
+                    LineCode = between(phoneNum, "-");
           }
           catch (error) {
                     console.log(error.message);
@@ -70,6 +69,7 @@ function displayOutput(a, b) {
 }
 
 function displayAreaCode(inputId, outputId) {
+          document.getElementById(outputId).innerHTML = "";
           var input = "'" + document.getElementById(inputId).value + "'";
           console.log(input)
           var outputText = "";
@@ -96,7 +96,7 @@ function displayCOCode(inputId, outputId) {
                     outputText = "Error";
                     document.getElementById(outputId).style.color = "blue";
           }
-          document.getElementById(outputId).innerHTML = outputText;
+          document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
 function displayLineCode(inputId, outputId) {
@@ -111,7 +111,7 @@ function displayLineCode(inputId, outputId) {
                     outputText = "Error";
                     document.getElementById(outputId).style.color = "blue";
           }
-          document.getElementById(outputId).innerHTML = outputText;
+          document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
 function getAreaCode(phoneNum) {
@@ -143,5 +143,5 @@ function displayAreaCode(inputId, outputId) {
                     console.log(error.message);
                     outputText = error.message;
           }
-          document.getElementById(outputId).innerHTML = outputText;
+          document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
