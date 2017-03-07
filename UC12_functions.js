@@ -22,18 +22,26 @@ function between(string, start, end) {
           }
           return string.slice(startAt, endAt);
 }
+
 /**
- * Returns an area code from a phone number
+ * Returns an line code from a phone number
  * @param   {string} phoneNum The phone number
- * @returns {string} The area code
+ * @returns {string} The line code
  */
 function displayOutput(inputId, outputId) {
           document.getElementById(outputId).innerHTML = "";
           displayAreaCode(inputId, outputId);
           displayCOCode(inputId, outputId);
           displayLineCode(inputId, outputId);
+
 }
 
+/**
+ * This takes the inputed numbers to varify if the AreaCode is valend or needs an     * error message
+ * @throws {Error} If AreaCode is invalded the error.message appear
+ * @param   {string} phoneNum The inputed phone number
+ * @returns {string} Returning either the AreaCode line or an error message
+ */
 function getAreaCode(phoneNum) {
           var areaCode;
           try {
@@ -51,6 +59,12 @@ function getAreaCode(phoneNum) {
           }
 }
 
+/**
+ * This takes the inputed numbers to varify if the CoCode is valend or needs an error  * message
+ * @throws {Error} If CoCode is invalded the error.message appear
+ * @param   {string} phoneNum The inputed phone number
+ * @returns {string} Returning either the CoCode line or an error message
+ */
 function getCOCode(phoneNum) {
           var COCode;
           try {
@@ -68,6 +82,12 @@ function getCOCode(phoneNum) {
           }
 }
 
+/**
+ * This takes the inputed numbers to varify if the lineCode is valend or needs an    * error message
+ * @throws {Error} If LineCode is invalded the error.message appear
+ * @param   {string} phoneNum The inputed phone number
+ * @returns {string} Returning either the LineCode line or an error message
+ */
 function getLineCode(phoneNum) {
           var lineCode;
           try {
@@ -85,6 +105,11 @@ function getLineCode(phoneNum) {
           }
 }
 
+/**
+ * Displays either the AreaCode or the error message depending on the input numbers
+ * @param {string} inputId  The input numbers from the text box
+ * @param {string} outputId Results from the input
+ */
 function displayAreaCode(inputId, outputId) {
           var outputText = "";
           var phoneNum = document.getElementById(inputId).value;
@@ -100,6 +125,11 @@ function displayAreaCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
+/**
+ * Displays either the CoCode or the error message depending on the input numbers
+ * @param {string} inputId  The input numbers from the text box
+ * @param {string} outputId Results from the input
+ */
 function displayCOCode(inputId, outputId) {
           var outputText = "";
           var phoneNum = document.getElementById(inputId).value;
@@ -115,6 +145,11 @@ function displayCOCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
+/**
+ * Displays either the LineCode or the error message depending on the input numbers
+ * @param {string} inputId  The input numbers from the text box
+ * @param {string} outputId Results from the input
+ */
 function displayLineCode(inputId, outputId) {
           var outputText = "";
           var phoneNum = document.getElementById(inputId).value;
