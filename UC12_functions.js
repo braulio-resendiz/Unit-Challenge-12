@@ -38,6 +38,11 @@ function getCOCode(phoneNum) {
           return COCode
 }
 
+/**
+ * Returns an line code from a phone number
+ * @param   {string} phoneNum The phone number
+ * @returns {string} The line code
+ */
 function getLineCode(phoneNum) {
           var LineCode;
           try {
@@ -49,12 +54,22 @@ function getLineCode(phoneNum) {
           return LineCode
 }
 
+/**
+ * [[Description]]
+ * @param {string} a [[Description]]
+ * @param {string} b [[Description]]
+ */
 function displayOutput(a, b) {
           displayAreaCode(a, b);
           displayCOCode(a, b);
           displayLineCode(a, b);
 }
 
+/**
+ * [[Description]]
+ * @param {string} inputId  [[Description]]
+ * @param {string} outputId [[Description]]
+ */
 function displayAreaCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML = "";
           var input = "'" + document.getElementById(inputId).value + "'";
@@ -70,6 +85,11 @@ function displayAreaCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML = outputText;
 }
 
+/**
+ * [[Description]]
+ * @param {string} inputId  [[Description]]
+ * @param {string} outputId [[Description]]
+ */
 function displayCOCode(inputId, outputId) {
           var input = "'" + document.getElementById(inputId).value + "'";
           var outputText = "";
@@ -84,6 +104,11 @@ function displayCOCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
+/**
+ * [[Description]]
+ * @param {string} inputId  [[Description]]
+ * @param {string} outputId [[Description]]
+ */
 function displayLineCode(inputId, outputId) {
           var input = "'" + document.getElementById(inputId).value + "'";
           var outputText = "";
@@ -98,6 +123,12 @@ function displayLineCode(inputId, outputId) {
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
 
+/**
+ * [[Description]]
+ * @throws {Error} [[Description]]
+ * @param   {string} phoneNum [[Description]]
+ * @returns {string} [[Description]]
+ */
 function getAreaCode(phoneNum) {
           var areaCode;
           try {
@@ -115,6 +146,12 @@ function getAreaCode(phoneNum) {
           }
 }
 
+/**
+ * [[Description]]
+ * @throws {Error} [[Description]]
+ * @param   {string} phoneNum [[Description]]
+ * @returns {string} [[Description]]
+ */
 function getCOCode(phoneNum) {
           var COCode;
           try {
@@ -132,6 +169,12 @@ function getCOCode(phoneNum) {
           }
 }
 
+/**
+ * [[Description]]
+ * @throws {Error} [[Description]]
+ * @param   {string} phoneNum [[Description]]
+ * @returns {string} [[Description]]
+ */
 function getAreaCode(phoneNum) {
           var areaCode;
           try {
@@ -149,6 +192,11 @@ function getAreaCode(phoneNum) {
           }
 }
 
+/**
+ * [[Description]]
+ * @param {string} inputId  [[Description]]
+ * @param {string} outputId [[Description]]
+ */
 function displayAreaCode(inputId, outputId) {
           var outputText = "";
           var phoneNum = document.getElementById(inputId).value;
