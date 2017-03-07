@@ -27,10 +27,11 @@ function between(string, start, end) {
  * @param   {string} phoneNum The phone number
  * @returns {string} The area code
  */
-function displayOutput(a, b) {
-          displayAreaCode(a, b);
-          displayCOCode(a, b);
-          displayLineCode(a, b);
+function displayOutput(inputId, outputId) {
+          document.getElementById(outputId).innerHTML = "";
+          displayAreaCode(inputId, outputId);
+          displayCOCode(inputId, outputId);
+          displayLineCode(inputId, outputId);
 }
 
 function getAreaCode(phoneNum) {
