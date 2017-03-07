@@ -22,7 +22,6 @@ function between(string, start, end) {
           }
           return string.slice(startAt, endAt);
 }
-
 /**
  * Returns an line code from a phone number
  * @param   {string} phoneNum The phone number
@@ -33,11 +32,9 @@ function displayOutput(inputId, outputId) {
           displayAreaCode(inputId, outputId);
           displayCOCode(inputId, outputId);
           displayLineCode(inputId, outputId);
-
 }
-
 /**
- * This takes the inputed numbers to varify if the AreaCode is valend or needs an     * error message
+ * This takes the inputed numbers to varify if the AreaCode is valend or needs an error message
  * @throws {Error} If AreaCode is invalded the error.message appear
  * @param   {string} phoneNum The inputed phone number
  * @returns {string} Returning either the AreaCode line or an error message
@@ -58,9 +55,8 @@ function getAreaCode(phoneNum) {
                     throw new Error("Invalid phone number: " + error.message);
           }
 }
-
 /**
- * This takes the inputed numbers to varify if the CoCode is valend or needs an error  * message
+ * This takes the inputed numbers to varify if the CoCode is valend or needs an error message
  * @throws {Error} If CoCode is invalded the error.message appear
  * @param   {string} phoneNum The inputed phone number
  * @returns {string} Returning either the CoCode line or an error message
@@ -81,9 +77,8 @@ function getCOCode(phoneNum) {
                     throw new Error("Invalid phone number: " + error.message);
           }
 }
-
 /**
- * This takes the inputed numbers to varify if the lineCode is valend or needs an    * error message
+ * This takes the inputed numbers to varify if the lineCode is valid or needs an error message
  * @throws {Error} If LineCode is invalded the error.message appear
  * @param   {string} phoneNum The inputed phone number
  * @returns {string} Returning either the LineCode line or an error message
@@ -104,7 +99,6 @@ function getLineCode(phoneNum) {
                     throw new Error("Invalid phone number: " + error.message);
           }
 }
-
 /**
  * Displays either the AreaCode or the error message depending on the input numbers
  * @param {string} inputId  The input numbers from the text box
@@ -124,7 +118,6 @@ function displayAreaCode(inputId, outputId) {
           }
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
-
 /**
  * Displays either the CoCode or the error message depending on the input numbers
  * @param {string} inputId  The input numbers from the text box
@@ -144,7 +137,6 @@ function displayCOCode(inputId, outputId) {
           }
           document.getElementById(outputId).innerHTML += "</br>" + outputText;
 }
-
 /**
  * Displays either the LineCode or the error message depending on the input numbers
  * @param {string} inputId  The input numbers from the text box
